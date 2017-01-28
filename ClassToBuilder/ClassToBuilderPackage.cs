@@ -134,7 +134,7 @@ namespace BJSS.ClassToBuilder
             int hr = solution.SaveSolutionElement((uint)__VSSLNSAVEOPTIONS.SLNSAVEOPT_SaveIfDirty, hierarchy, 0);
             if (hr < 0)
             {
-                throw new COMException(string.Format("Failed to add project item", itemFullPath, GetErrorInfo()), hr);
+                throw new COMException(string.Format("Failed to add project item {0} {1}", itemFullPath, GetErrorInfo()), hr);
             }
 
             var selectedProjectItem = GetProjectItemFromHierarchy(hierarchy, itemid);
@@ -168,7 +168,7 @@ using System.Threading.Tasks;
                 string itemFilename = Path.GetFileNameWithoutExtension(itemFullPath);
                 string itemExtension = Path.GetExtension(itemFullPath);
 
-                string itemName = b.buildername + ".cs";
+                string itemName = itemFilename + "Builder.cs";
 
                 var newItemFullPath = itemFolder; 
 
