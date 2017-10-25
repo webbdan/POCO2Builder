@@ -161,7 +161,6 @@ using System.Threading.Tasks;
 ";
             content += b.body;
 
-            Project project = null;
             if (selectedProjectItem != null)
             {
                 string itemFolder = Path.GetDirectoryName(itemFullPath);
